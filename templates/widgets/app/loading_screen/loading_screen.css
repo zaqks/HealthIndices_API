@@ -1,0 +1,64 @@
+#loading_screen {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--bg1);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+
+#loading_screen img {
+    max-width: 20%;
+    filter: invert(1);
+}
+
+
+
+/* LOADER */
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: var(--sz5);
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: var(--txt0);
+    animation: pulse 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.25);
+    }
+}
