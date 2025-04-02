@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'widgets/global/webcam/webcam.css' %}">
+
+<div class="webcam">
+    <video autoplay></video>
+    <canvas></canvas>
+    <button>
+        <img src="{% static 'widgets/global/webcam/shutter.png' %}" alt="">
+    </button>
+    <script src="{% static 'widgets/global/webcam/webcam.js' %}"></script>
+</div>

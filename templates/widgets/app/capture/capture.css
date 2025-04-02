@@ -1,0 +1,25 @@
+ #capture {
+     display: flex;
+
+     width: 100%;
+     height: 100%;
+ }
+
+ #capture #webcam {
+     width: 100%;
+     height: 100%;
+ }
+
+
+ #capture button#next {
+     position: absolute;
+     right: var(--sz5);
+     top: var(--sz5);
+
+     font-size: var(--sz5);
+ }
+
+
+ #capture.hide {
+     display: none;
+ }

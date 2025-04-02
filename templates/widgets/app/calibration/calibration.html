@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'widgets/app/calibration/calibration.css' %}">
+
+
+<div id="capture">
+
+    <!-- CAMERA -->
+    <div id="webcam">
+        {% include 'widgets/global/webcam/webcam.html' %}
+    </div>
+
+    <!-- BUTTON -->
+    <script src="{% static 'widgets/app/capture/upload.js' %}"></script>
+    <button id="next">Calibrate</button>
+
+
+
+    <script>
+        // INIT THE CAMERA 
+        const cam = new WebCam('webcam');
+
+        // NEXT LOGIC
+        var images = [];
+
+        const next_btn = document.getElementById('next')
+        next_btn.addEventListener('click', function () {
+            if (cam.preview) {
+                if (images.length < 1) {
+                    images.push(cam.data);
+                    cam.toggle_preview()
+                    //                  
+                    next_btn.innerHTML = `Next (${images.length}/2)`
+                }
+                if (images.length == 1) {
+                    next_btn.innerHTML = `Processing...`
+                    uploadImages(images, "{% url 'model_app:calibrate' %}", function (_) {
+
+                        document.location.href = '/'
+                    });
+                }
+            }
+        })
+
+    </script>
+</div>
