@@ -1,4 +1,5 @@
-from .U2Net_BodyMeasurement.U2Net_BodyMeasurement import BodyMeasurer
+from model_app.ai.U2Net_BodyMeasurement.U2Net_BodyMeasurement import BodyMeasurer
+
 from math import pi, sqrt
 
 
