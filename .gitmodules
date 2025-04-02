@@ -1,0 +1,3 @@
+[submodule "model_app/ai/U2Net_BodyMeasurement"]
+	path = model_app/ai/U2Net_BodyMeasurement
+	url = https://github.com/zaqks/U2Net_BodyMeasurement
