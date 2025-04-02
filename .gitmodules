@@ -1,4 +1,0 @@
-[submodule "model_app/ai"]
-	path = model_app/ai
-	#url = https://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@github.com/zaqks/Neu_CNN
-	branch = main
