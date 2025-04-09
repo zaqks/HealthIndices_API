@@ -11,7 +11,10 @@ def calibrate(request):
 
 
 def score(request):
-    data = Score.objects.all().reverse()
+    data = Score.objects.all()
+    data = list(data)
+    data.reverse()
+
     return render(request, 'ui_app/score.html', {
         'scores': data
     })

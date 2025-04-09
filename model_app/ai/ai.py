@@ -9,14 +9,14 @@ def get_calibration():
         return None
 
 
-model = None
-# from model_app.ai.U2Net_BodyMeasurement.U2Net_BodyMeasurement import BodyMeasurer
-# from ui_app.models import Score
-# model = BodyMeasurer(resize_factor=get_calibration(),  out_dir='db')
+# model = None
+from model_app.ai.U2Net_BodyMeasurement.U2Net_BodyMeasurement import BodyMeasurer
+from ui_app.models import Score
+model = BodyMeasurer(resize_factor=get_calibration(),  out_dir='db')
 
-# print("-"*30)
-# print(f'calibration: {model.resize_factor}')
-# print("-"*30)
+print("-"*30)
+print(f'calibration: {model.resize_factor}')
+print("-"*30)
 
 
 def calc_bri(ws, hs):
