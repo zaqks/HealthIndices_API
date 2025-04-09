@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'widgets/theme_dark.css' %}">
+    <link rel="stylesheet" href="{% static 'widgets/global/section/section.css' %}">
+    <link rel="stylesheet" href="{% static 'widgets/global/table/table.css' %}">
+
+    <link rel="stylesheet" href="{% static 'ui_app/score.css' %}">
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="section_title">
+            <h1>Scores Table</h1>
+        </div>
+        <div class="section_content">
+            <table>
+                <thead>
+                    <th>Height (cm)</th>
+                    <th>Waist (cm)</th>
+                    <th>BRI</th>
+                </thead>
+                <tbody>
+                    {% for i in scores%}
+                    <tr>
+                        <td>{{i.height|floatformat:2}} cm</td>
+                        <td>{{i.waist|floatformat:2}} cm</td>
+
+                        {% if i.bri > 6.9 %}
+                        <td class="red">{{i.bri|floatformat:2}}</td>
+                        {% else %}
+                        <td class="green">{{i.bri|floatformat:2}}</td>
+                        {% endif %}
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+body {
+    background-color: var(--bg1);
+    padding: var(--sz6);
+}
+
+
+
+table {
+    width: 100%;
+
+}
+
+td.red {
+    color: var(--err);
+}
+
+td.green {
+    color: var(--cnf);
+}

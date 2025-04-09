@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from ui_app.models import Score
 
 
 def ui_app(request):
@@ -7,3 +8,10 @@ def ui_app(request):
 
 def calibrate(request):
     return render(request, 'ui_app/calibrate.html', {})
+
+
+def score(request):
+    data = Score.objects.all().reverse()
+    return render(request, 'ui_app/score.html', {
+        'scores': data
+    })
