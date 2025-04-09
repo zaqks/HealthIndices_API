@@ -49,5 +49,14 @@
             }
         })
 
+        // KB
+        document.addEventListener('keypress', function (e) {
+            if (event.key === "Enter")
+                cam.btn.click()
+            if (event.key === " ")
+                next_btn.click()
+        })
+
+
     </script>
 </div>
